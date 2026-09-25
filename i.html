@@ -1,0 +1,370 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="CITOG digital experiences and frontend development portfolio"
+    />
+    <title>CITOG | Digital Experiences</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Space+Grotesk:wght@500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="c.css" />
+  </head>
+  <body>
+    <div class="ambient ambient-one"></div>
+    <div class="ambient ambient-two"></div>
+    <div class="toast" id="toast" role="status" aria-live="polite"></div>
+    <main class="auth-shell" id="auth-shell">
+      <div class="auth-intro">
+        <a class="brand" href="#"
+          ><span class="brand-mark">C</span> CITOG<span class="brand-dot"
+            >.</span
+          ></a
+        >
+        <div class="intro-copy">
+          <p class="eyebrow">Independent digital studio</p>
+          <h1>Ideas that move<br /><em>people forward.</em></h1>
+          <p class="intro-text">
+            Thoughtful interfaces, expressive brands, and fast experiences built
+            for the modern web.
+          </p>
+        </div>
+        <div class="intro-foot">
+          <span class="status-dot"></span> Currently accepting new projects
+          <span>2025 — 2026</span>
+        </div>
+      </div>
+      <section class="auth-panel">
+        <div class="auth-card" id="login-view">
+          <div class="form-heading">
+            <p class="eyebrow">Welcome back</p>
+            <h2>Sign in to continue</h2>
+            <p>Enter your details to access the CITOG experience.</p>
+          </div>
+          <form id="login-form" novalidate>
+            <label for="login-email">Email address</label
+            ><input
+              id="login-email"
+              name="email"
+              type="email"
+              placeholder="you@example.com"
+              autocomplete="email"
+              required
+            /><label for="login-password">Password</label
+            ><input
+              id="login-password"
+              name="password"
+              type="password"
+              placeholder="Your password"
+              autocomplete="current-password"
+              required
+            />
+            <div class="form-row">
+              <label class="check-label"
+                ><input type="checkbox" id="remember-me" />
+                <span>Remember me</span></label
+              ><a href="#" id="forgot-link">Forgot password?</a>
+            </div>
+            <button class="primary-btn" type="submit">
+              Sign in <span>↗</span>
+            </button>
+          </form>
+          <p class="switch-copy">
+            No account yet?
+            <button class="text-btn" data-show="register-view">
+              Create one
+            </button>
+          </p>
+        </div>
+        <div class="auth-card hidden" id="register-view">
+          <button class="back-btn" data-show="login-view">
+            ← Back to sign in
+          </button>
+          <div class="form-heading">
+            <p class="eyebrow">Start something good</p>
+            <h2>Create your account</h2>
+            <p>Join the studio and keep your projects in one place.</p>
+          </div>
+          <form id="register-form" novalidate>
+            <label for="register-name">Full name</label
+            ><input
+              id="register-name"
+              name="name"
+              type="text"
+              placeholder="Your full name"
+              autocomplete="name"
+              required
+            /><label for="register-email">Email address</label
+            ><input
+              id="register-email"
+              name="email"
+              type="email"
+              placeholder="you@example.com"
+              autocomplete="email"
+              required
+            /><label for="register-password">Create password</label
+            ><input
+              id="register-password"
+              name="password"
+              type="password"
+              placeholder="At least 6 characters"
+              minlength="6"
+              autocomplete="new-password"
+              required
+            /><button class="primary-btn" type="submit">
+              Create account <span>↗</span>
+            </button>
+          </form>
+          <p class="switch-copy">
+            Already have an account?
+            <button class="text-btn" data-show="login-view">Sign in</button>
+          </p>
+        </div>
+        <div class="auth-card hidden" id="verify-view">
+          <div class="verify-icon">✓</div>
+          <div class="form-heading">
+            <p class="eyebrow">One last step</p>
+            <h2>Verify your email</h2>
+            <p>
+              We sent a 6-digit code to
+              <strong id="verify-email">your inbox</strong>.
+            </p>
+          </div>
+          <form id="verify-form" novalidate>
+            <label for="verification-code">Verification code</label
+            ><input
+              class="code-input"
+              id="verification-code"
+              type="text"
+              inputmode="numeric"
+              pattern="[0-9]{6}"
+              maxlength="6"
+              placeholder="000000"
+              required
+            /><button class="primary-btn" type="submit">
+              Verify and enter <span>↗</span>
+            </button>
+          </form>
+          <p class="switch-copy">
+            Didn't get it?
+            <button class="text-btn" id="resend-code">Resend code</button>
+          </p>
+        </div>
+      </section>
+    </main>
+    <div class="site-shell hidden" id="site-shell">
+      <nav class="navbar" id="navbar">
+        <a class="brand" href="#home"
+          ><span class="brand-mark">C</span> CITOG<span class="brand-dot"
+            >.</span
+          ></a
+        ><button
+          class="menu-toggle"
+          id="menu-toggle"
+          aria-label="Open navigation"
+          aria-expanded="false"
+        >
+          ☰
+        </button>
+        <div class="nav-links" id="nav-links">
+          <a href="#home">Home</a><a href="#about">About</a
+          ><a href="#services">Services</a><a href="#projects">Projects</a
+          ><a href="#contact">Contact</a
+          ><button class="logout-btn" id="logout-btn">Log out</button>
+        </div>
+      </nav>
+      <header class="hero section" id="home">
+        <div class="hero-copy reveal">
+          <p class="eyebrow">Hello, <span id="member-name">there</span></p>
+          <h1>Build boldly.<br /><em>Stay curious.</em></h1>
+          <p>
+            I create digital products with clear thinking, character, and the
+            kind of polish people remember.
+          </p>
+          <a class="primary-btn inline-btn" href="#projects"
+            >Explore my work <span>↓</span></a
+          >
+        </div>
+        <div class="hero-art reveal">
+          <div class="art-label">Selected<br />work <strong>↘</strong></div>
+          <img
+            src="img/y.webp"
+            alt="Creative workspace and design inspiration"
+          />
+          <div class="art-stamp">CITOG<br /><span>Digital studio</span></div>
+        </div>
+      </header>
+      <section class="section split-section" id="about">
+        <div class="section-label reveal">01 / About</div>
+        <div class="section-content reveal">
+          <h2><em>Frontend Developer & Designer</em></h2>
+          <p>
+            I'm a Frontend developer and designer with a focus on creating
+            digital products that are both functional and visually appealing. My
+            work is driven by a passion for crafting experiences that resonate
+            with users and leave a lasting impression. The Knowlegde I gained
+            from BETECHIFIED has really helped me and at the same time
+            enlightened me concerning the basic fundamental of how to build a
+            wellstructured and functioning websites.
+          </p>
+          <div class="stat-row">
+            <div><strong>01</strong><span>Years of craft</span></div>
+            <div><strong>32</strong><span>Projects shipped</span></div>
+            <div><strong>11</strong><span>Happy partners</span></div>
+          </div>
+        </div>
+      </section>
+      <section class="section" id="services">
+        <div class="section-heading reveal">
+          <div class="section-label">02 / Services</div>
+          <h2>What I bring<br /><em>to the table.</em></h2>
+        </div>
+        <div class="service-grid">
+          <article class="service-card reveal">
+            <span>01</span>
+            <h3>Web design</h3>
+            <p>
+              Distinctive digital identities and responsive interfaces shaped
+              around real people.
+            </p>
+          </article>
+          <article class="service-card reveal">
+            <span>02</span>
+            <h3>Development</h3>
+            <p>
+              Fast, accessible products made with clean code and an eye for the
+              details.
+            </p>
+          </article>
+          <article class="service-card reveal">
+            <span>03</span>
+            <h3>Direction</h3>
+            <p>
+              Clear creative direction that turns a good idea into a memorable
+              experience.
+            </p>
+          </article>
+        </div>
+      </section>
+      <section class="section projects-section" id="projects">
+        <div class="section-heading reveal">
+          <div class="section-label">03 / Selected work</div>
+          <h2>Made with<br /><em>intention.</em></h2>
+        </div>
+        <div class="project-grid">
+          <article class="project-card large reveal">
+            <img src="img/i.webp" alt="Project showcase one" />
+            <div>
+              <span>Brand identity / 2025</span>
+              <h3>Northstar</h3>
+            </div>
+          </article>
+          <article class="project-card reveal">
+            <img src="img/j.webp" alt="Project showcase two" />
+            <div>
+              <span>Web experience / 2026</span>
+              <h3>Field notes</h3>
+            </div>
+          </article>
+          <article class="project-card reveal">
+            <img src="img/t.webp" alt="Project showcase three" />
+            <div>
+              <span>Digital product / 2026</span>
+              <h3>Common ground</h3>
+            </div>
+          </article>
+          <div>
+            <p class="reveal">
+              Want to see more? Check out my full projects on GitHub.
+            </p>
+            <a
+              class="primary-btn inline-btn"
+              href="https://github.com//celestineakinyemi358"
+              target="_blank"
+              rel="noopener noreferrer"
+              >See my work <span>↗</span></a
+            >
+          </div>
+        </div>
+      </section>
+      <section class="section skill-section" id="skills">
+        <div class="section-label reveal">My Skills</div>
+        <div class="contact-content reveal">
+          <span class="skill">HTML-5</span>
+          <span class="skill">CSS</span>
+          <span class="skill">JAVASCRIPT</span>
+          <span class="skill">GIT/GITHUB</span>
+          <span class="skill">BOOTSTRAP CSS</span>
+        </div>
+      </section>
+      <section class="section contact-section" id="contact">
+        <div class="section-label reveal">04 / Say hello</div>
+        <div class="contact-content reveal">
+          <h2>Have a good<br /><em>feeling?</em></h2>
+          <p>
+            Tell us what you're thinking. The first conversation is always on
+            us.
+          </p>
+          <form
+            action="https://formspree.io/f/mkjgzpja"
+            method="post"
+            id="contact-form"
+            novalidate
+          >
+            <label for="contact-name" class="label">Full name</label
+            ><input
+              id="contact-name"
+              class="input"
+              name="name"
+              type="text"
+              placeholder="Your full name"
+              required
+            /><label for="contact-email" class="label">Email address</label
+            ><input
+              id="contact-email"
+              class="input"
+              name="email"
+              type="email"
+              placeholder="Your email address"
+              required
+            />
+            <label for="contact-message" class="label">Message</label
+            ><textarea
+              id="contact-message"
+              class="input"
+              name="message"
+              placeholder="What would you like to discuss?"
+              required
+            ></textarea>
+            <button class="primary-btn contact-link btn" type="submit">
+              Send message<span></span>↗
+            </button>
+          </form>
+        </div>
+      </section>
+      <footer>
+        <a class="brand" href="https://github.com/celestineakinyemi358"
+          ><span>GITHUB</span></a
+        >
+        <a
+          class="brand"
+          href="https://www.linkedin.com/in/celestine-akinyemi-78641a400"
+          ><span>Linkedin</span></a
+        >
+        <a class="brand" href="https://wa.link/41zm71"><span>WHATAPP</span></a>
+        <a class="brand" href="#home"
+          ><span class="brand-mark">C</span> CITOG<span class="brand-dot"
+            >.</span
+          ></a
+        ><span>© 2025 CITOG studio</span><span>Nigeria · Worldwide</span>
+      </footer>
+    </div>
+    <script src="j.js"></script>
+  </body>
+</html>
